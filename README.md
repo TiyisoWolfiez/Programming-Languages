@@ -3,8 +3,7 @@ This implementation explores and implements functional programming concepts, inc
 
 
 # What you need:
-- You will have to use the DrRacket 8.9 IDE using the sicp language collections, which is installed on the Windows computers in the Informatorium. Instructions for installing sicp are available at https://docs.
-  racket-lang.org/sicp-manual/Installation.html. You should write your function implementations
+- You will have to use the DrRacket 8.9 IDE using the sicp language collections, which is installed on the Windows computers in the Informatorium. Instructions for installing sicp are available at https://docs.racket-lang.org/sicp-manual/Installation.html. You should write your function implementations
   in DrRacket. Note that your program must always start with the line:
   "#lang sicp"
 You can then run the source file by clicking on the “Run” icon at the top of the screen. You must include the code to test your functions at the end of your program (see below for some sample inputs).
