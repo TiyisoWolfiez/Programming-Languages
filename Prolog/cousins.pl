@@ -41,3 +41,11 @@ ownsPet(peter, rover).
 ownsPet(mary, fluffy).
 ownsPet(joseph, tweety).
 ownsPet(lilly, fluffy).
+
+household(X, Y) :- married(X, Y).
+household(X,Y) :- married(Y, X).
+
+householdPet(O1, O2, P) :- ownsPet(O1, P), household(O1, O2).
+householdPet(O1, O2, P) :- ownsPet(O2, P), household(O2, O1).
+
+wanderingPet(P) :- householdPet(O1,O2,P),householdPet(O3,_,P), \+(O1 = O3),\+(O2 = O3).
