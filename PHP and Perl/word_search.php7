@@ -1,1 +1,21 @@
+<?php
 
+if ($argc != 3) {
+    echo "<html><body><p>Usage: php search_php.php <input_file> <word></p></body></html>\n";
+    exit(1);
+}
+
+$input_file = $argv[1];
+$file_lines = file($input_file, FILE_IGNORE_NEW_LINES);
+
+$combined_text = implode('', array_map('strrev', $file_lines));
+
+$combined_text = preg_replace("/[^a-zA-Z]+/", "", strtolower($combined_text));
+
+$word = $argv[2];
+
+$count = substr_count(strrev($combined_text), strrev($word));
+
+echo "<html><body><p>Matches of \"$word\": $count</p></body></html>\n";
+// php word_search.php7 input.txt mad
+?>
