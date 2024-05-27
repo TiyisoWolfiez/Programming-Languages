@@ -6,3 +6,11 @@ class Employee
         @baseSalary = baseSalary
         @baseSalaryPaid = false
     end
+
+    def payEmployee
+        if @baseSalaryPaid == false
+            @earnings = @earnings + @baseSalary
+            @baseSalaryPaid = true
+            puts "paid"
+        end
+    end
