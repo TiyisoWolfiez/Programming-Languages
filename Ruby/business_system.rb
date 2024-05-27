@@ -14,3 +14,20 @@ class Employee
             puts "paid"
         end
     end
+
+    def newMonth
+        @baseSalaryPaid = false
+    end
+end
+
+class Manager < Employee
+    def initialize(bonus)
+        super()
+        @bonus = bonus
+    end
+
+    def payEmployee
+        super()
+        @earnings = @earnings + @bonus
+    end
+end
