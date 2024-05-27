@@ -38,3 +38,35 @@ class Programmer < Employee
         super(baseSalary)
     end
 end
+
+class Team
+    def initialize
+        @listOfEmployees = []
+    end
+
+    def addMember(employee)
+        if @listOfEmployees.length >= 2
+            raise 'Only A Maximum of 2 Members Allowed'
+        else
+            @listOfEmployees << employee
+        end
+    end
+
+    def payTeam
+        @listOfEmployees.each do |employee|
+            employee.payEmployee
+        end
+    end
+
+    def newMonth
+        @listOfEmployees.each do |employee|
+            employee.newMonth
+        end
+    end
+
+    def printEarnings
+        @listOfEmployees.each do |member|
+            puts "Employee earnings: R#{member.earnings}"
+        end
+    end
+end
