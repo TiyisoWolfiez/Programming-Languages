@@ -103,3 +103,8 @@ loop do
         puts "Invalid input. Please enter 'y' or 'n'."
     end
 end
+
+teams.each_with_index do |team, index|
+    puts "Earnings for team member #{index + 1}:"
+    team.printEarnings
+end
