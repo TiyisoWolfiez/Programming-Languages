@@ -31,3 +31,10 @@ class Manager < Employee
         @earnings = @earnings + @bonus
     end
 end
+
+class Programmer < Employee
+    def initialize(percentage)
+        baseSalary = 20000.00 * percentage
+        super(baseSalary)
+    end
+end
