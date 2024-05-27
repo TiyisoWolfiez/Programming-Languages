@@ -70,3 +70,36 @@ class Team
         end
     end
 end
+
+# Testing code
+teams = [Team.new, Team.new]
+
+puts "Enter manager's bonus amount:"
+bonus = gets.chomp.to_f
+manager = Manager.new(bonus)
+teams.each { |team| team.addMember(manager) }
+
+teams.each_with_index do |team, index|
+    puts "Enter percentage for programmer in team #{index + 1}:"
+    percentage = gets.chomp.to_f
+    programmer = Programmer.new(percentage)
+    team.addMember(programmer)
+end
+
+loop do
+    puts "Enter 'y' to pay teams for another month of work, 'n' to end payments:"
+    choice = gets.chomp
+    if choice == 'y' || choice == 'n'
+        teams.each do |team|
+            team.payTeam
+        end
+
+        teams.each do |team|
+            team.newMonth
+        end
+        
+        break if choice == 'n'
+    else
+        puts "Invalid input. Please enter 'y' or 'n'."
+    end
+end
